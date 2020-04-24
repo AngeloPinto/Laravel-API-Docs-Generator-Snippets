@@ -1,14 +1,23 @@
 {
 	"name": "laravel-api-docs-generator-snippets",
-	"displayName": "Laravel API Docs Generator Snippets",
+	"version": "0.1.0",
+	"publisher": "angelorafael",
+	"author": {
+		"name": "Angelo Rafael Pinto"
+	},
+	"displayName": "Laravel API Docs Snippets",
 	"description": "Snippets to library Laravel API Documentation Generator",
-	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.44.0"
 	},
 	"categories": [
 		"Snippets", "Keymaps", "Other" 
 	],
+	"icon": "img/logo.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AngeloPinto/VSCode-Laravel-API-Docs-Generator-Snippets"
+	},
 	"activationEvents": [
         "onCommand:laravel-api-docs-generator-snippets.adjust_block"
 	],
