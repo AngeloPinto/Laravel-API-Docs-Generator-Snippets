@@ -16,12 +16,21 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"PHP Tags 1": {
+	"PHP Tag": {
+		"prefix": "php_tag",
+		"body": [
+			"<?php\n",
+			"\t$1"
+		],
+		"description": "Insert PHP Initial Tag"
+	},
+
+	"PHP Tags": {
 		"prefix": "php_tags",
 		"body": [
 			"<?php $1 ?>",
 		],
-		"description": "Insert PHP tags"
+		"description": "Insert PHP Tags"
 	},
 
 	"PHP Tags 2": {
@@ -31,7 +40,7 @@
 			"    $1",
 			"?>",
 		],
-		"description": "Insert PHP tags block"
+		"description": "Insert PHP Tags in Block"
 	},
 
 	"PHP Title": {
@@ -111,18 +120,23 @@
 	
 	"Laravel APIDoc Setup": {
 		"prefix": "apidoc_setup",
-		"scope": "php",
 		"body": [
 			"/*",
-			"    $[prompt]: \n",
-			"    * 1st - Install the library",
-			"    composer require --dev mpociot/laravel-apidoc-generator\n",
-			"    * 2nd - Publish the config file",
-			"    php artisan vendor:publish --provider=\"Mpociot\\ApiDoc\\ApiDocGeneratorServiceProvider\" --tag=apidoc-config\n",
-			"    * 3rd - Generate the documentation",
-			"    php artisan apidoc:generate\n",
-			"    * 4th - Open Documentation",
-			"    \\public\\docs\\index.html\n",
+			
+			"\t$[prompt]: \n",
+
+			"\t1) Install the library\n",
+			"\t\tcomposer require --dev mpociot/laravel-apidoc-generator\n",
+
+			"\t2) Publish the config file\n",
+			"\t\tphp artisan vendor:publish --provider=\"Mpociot\\ApiDoc\\ApiDocGeneratorServiceProvider\" --tag=apidoc-config\n",
+			
+			"\t3) Generate the documentation\n",
+			"\t\tphp artisan apidoc:generate\n",
+			
+			"\t4) Open Documentation\n",
+			"\t\t\\public\\docs\\index.html\n",
+
 			"*/"
 		],
 		"description": "Comentário para Sub-Títulos no PHP"

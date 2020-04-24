@@ -1,0 +1,368 @@
+{
+	// Place your Teste1 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+    // }
+        
+	"JWT Setup": {
+		"prefix": "jwt_setup",
+		"body": [
+			"/*\n",
+
+            "\t1) Install the library - $[prompt]\n",
+            
+                "\t\tcomposer require tymon/jwt-auth\n",
+            
+            "\t2) Add the provider in the file [/config/app.php]\n",
+
+                "\t\t...",
+                "\t\tproviders' => [",
+                    "\t\t\t...",
+                    "\t\t\tjwt_provider",
+                    "\t\t\t...",
+                "\t\t],\n",
+
+			"\t3) Publish the provider. Will be create a file [/config/jwt.php] - $[prompt]\n",
+    
+                "\t\tphp artisan vendor:publish --provider=\"Tymon\\JWTAuth\\Providers\\LaravelServiceProvider\"\n",
+            
+			"\t4) In the [.env] will be generate a secret key of JWT - $[prompt]\n",
+
+                "\t\tphp artisan jwt:secret\n",
+
+            "\t5) Add the Middleware [/App/Http/Kernel.php]\n",
+
+                "\t\t...",
+                "\t\tprotected \\$routeMiddleware = [",
+                    "\t\t\t...",
+                    "\t\t\tjwt_middleware",
+                "\t\t];\n",
+
+
+            "\t6) Add the Routes [routes/api.php]\n",
+                
+                "\t\tjwt_routes\n",
+
+            "\t7) Updating User Model [App/User.php] implements JWTSubject\n",
+            
+                "\t\t...",
+                "\t\tjwt_use_subject\n",
+                
+                "\t\tclass User extends Authenticatable jwt_user_implements",
+                "\t\t{",
+                    "\t\t\t...\n",
+                    "\t\t\tjwt_user_methods",
+                "\t\t}\n",
+
+            "\t8) Creating Registration Form Request - $[prompt]\n",
+                
+                "\t\tphp artisan make:request RegistrationFormRequest\n",
+
+            "\t9) Creating Validations Rules [/App/Http/Requests/RegistrationFormRequest.php]\n",
+
+                "\t\t...",
+                "\t\tpublic function authorize()",
+                "\t\t{",
+                    "\t\t\treturn true;",
+                "\t\t}",
+                "\t\t...",
+            
+                "\t\tpublic function rules()",
+                "\t\t{",
+                    "\t\t\treturn [",
+                        "\t\t\t\tjwt_register_rule",
+                    "\t\t\t];",
+                "\t\t}\n",
+
+            "\t10) Creating API Controller for Login and Registration - $[prompt]\n",
+
+                "\t\tphp artisan make:controller APIController\n",
+
+            "\t11) Creating methods in API Controller [app/Http/Controllers/APIController.php]\n",
+
+                "\t\tuse Illuminate\\Http\\Request;",
+                "\t\tjwt_use_api_controller\n",
+
+                "\t\tclass APIController extends Controller",
+                "\t\t{",
+                    "\t\t\tjwt_register_method",
+                    "\t\t\tjwt_login_method",
+                    "\t\t\tjwt_logout_method",
+                "\t\t}\n",
+
+			"*/"
+		],
+		"description": "Comentário para Sub-Títulos no PHP"
+    },
+
+    // PROVIDER
+    //-----------
+    
+	"JWT Provider": {
+        "prefix": "jwt_provider",
+		"scope": "php",
+		"body": [
+			"Tymon\\JWTAuth\\Providers\\LaravelServiceProvider::class, // JWT Provider",
+		],
+		"description": "Insert Provider"
+    },
+
+    // MIDDLEWARE
+    //-------------
+    
+	"JWT Middlewrae": {
+        "prefix": "jwt_middleware",
+        "scope": "php",
+		"body": [
+			"'auth.jwt'  =>  \\Tymon\\JWTAuth\\Http\\Middleware\\Authenticate::class, // JWT middleware",
+		],
+		"description": "Insert Middleware"
+    },
+
+    // ROUTES
+    //---------
+    
+	"JWT Routes": {
+        "prefix": "jwt_routes",
+        "scope": "php",
+		"body": [
+			"Route::post('login'   , 'ApiController@login');",
+            "Route::post('register', 'ApiController@register');\n\n",
+            
+            "Route::group(['middleware' => 'auth.jwt'], function () {\n",
+
+                "\tRoute::get('logout', 'ApiController@logout');",
+                "\tRoute::get('me'    , 'ApiController@me');\n",
+
+                "\t//... Your routes ...\n",
+
+            "});",
+		],
+		"description": "Insert Routes with Midleware"
+    },
+
+    // USES LIBRARIES
+    //-----------------
+    
+	"JWT Use Subject": {
+        "prefix": "jwt_use_subject",
+        "scope": "php",
+		"body": [
+			"use Tymon\\JWTAuth\\Contracts\\JWTSubject;",
+		],
+		"description": "Insert Use of Subject Class"
+    },
+
+	"JWT Uses API Controller": {
+        "prefix": "jwt_use_api_controller",
+        "scope": "php",
+		"body": [
+			"use JWTAuth;",
+            "use App\\User;",
+            "use Tymon\\JWTAuth\\Exceptions\\JWTException;",
+            "use App\\Http\\Requests\\RegistrationFormRequest;"
+		],
+		"description": "Insert Uses to Api Controller"
+    },
+    
+	"JWT Use JWT Exception": {
+        "prefix": "jwt_use_jwt_exception",
+        "scope": "php",
+		"body": [
+            "use Tymon\\JWTAuth\\Exceptions\\JWTException;",
+		],
+		"description": "Insert Use JWT Exception"
+    },
+
+	"JWT Use AuthJWT": {
+        "prefix": "jwt_use_jwt",
+        "scope": "php",
+		"body": [
+            "use JWTAuth;",
+		],
+		"description": "Insert Use JWT Exception"
+    },
+    
+    // USER CLASS
+    //-------------
+    
+	"JWT User Implements": {
+        "prefix": "jwt_user_implements",
+        "scope": "php",
+		"body": [
+			"implements JWTSubject",
+		],
+		"description": "Insert Implements Interface to User Class"
+	},
+    
+	"JWT User Methods": {
+        "prefix": "jwt_user_methods",
+        "scope": "php",
+		"body": [
+			"/**",
+            " * Get the identifier that will be stored in the subject claim of the JWT.",
+            " *",
+            " * @return mixed",
+            " */",
+            "public function getJWTIdentifier()",
+            "{",
+                "\treturn \\$this->getKey();",
+            "}\n",
+       
+            "/**",
+            " * Return a key value array, containing any custom claims to be added to the JWT.",
+            " *",
+            " * @return array",
+            " */",
+            "public function getJWTCustomClaims()",
+            "{",
+                "\treturn [];",
+            "}\n",
+		],
+		"description": "Insert Use of Subject Class"
+    },
+
+	"JWT User Token": {
+        "prefix": "jwt_user_token",
+        "scope": "php",
+		"body": [
+			"\\$this->user = JWTAuth::parseToken()->authenticate();",
+		],
+		"description": "Get User from Token"
+	},    
+
+    // REGISTRATION REQUEST
+    //-----------------------
+    
+	"JWT Register Rule": {
+        "prefix": "jwt_register_rule",
+        "scope": "php",
+		"body": [
+			"'name'     => 'required|string',",
+            "'email'    => 'required|email|unique:users',",
+            "'password' => 'required|string|min:6|max:15'",
+		],
+		"description": "Insert validations rules to Register new User"
+    },
+
+    // METHODS API CONTROLLER
+    //-------------------------
+
+	"JWT Register Method": {
+        "prefix": "jwt_register_method",
+        "scope": "php",
+		"body": [
+            "/**",
+            " * @param RegistrationFormRequest \\$request",
+            " * @return \\Illuminate\\Http\\JsonResponse",
+            " */",
+            "public function register(RegistrationFormRequest \\$request)",
+            "{",
+                "\t\\$user = new User();\n",
+                "\t\\$user->name     = \\$request->name;",
+                "\t\\$user->email    = \\$request->email;",
+                "\t\\$user->password = bcrypt(\\$request->password);",
+                "\t\\$user->save();\n",
+
+                "\treturn response()->json([",
+                    "\t\t'success'   =>  true,",
+                    "\t\t'data'      =>  \\$user",
+                "\t], 200);",
+            "}"
+		],
+		"description": "Method to Register new User"
+    },
+
+
+	"JWT Login Method": {
+        "prefix": "jwt_login_method",
+        "scope": "php",
+		"body": [
+            "/**",
+            " * @param Request \\$request",
+            " * @return \\Illuminate\\Http\\JsonResponse",
+            " */",
+            "public function login(Request \\$request)",
+            "{",
+                "\t\\$input = \\$request->only('email', 'password');",
+                "\t\\$token = null;\n",
+        
+                "\tif (!\\$token = JWTAuth::attempt(\\$input)) {",
+                    "\t\treturn response()->json([",
+                        "\t\t\t'success' => false,",
+                        "\t\t\t'message' => 'Invalid Email or Password',",
+                    "\t\t], 401);",
+                "\t}\n",
+        
+                "\treturn response()->json([",
+                    "\t\t'success' => true,",
+                    "\t\t'token'   => \\$token,",
+                "\t]);",
+            "}",
+		],
+		"description": "Method to Login a User"
+    },
+    
+	"JWT Logout Method": {
+        "prefix": "jwt_logout_method",
+        "scope": "php",
+		"body": [
+            "/**",
+            " * @param Request \\$request",
+            " * @return \\Illuminate\\Http\\JsonResponse",
+            " * @throws \\Illuminate\\Validation\\ValidationException",
+            " */",
+            "public function logout(Request \\$request)",
+            "{",
+                "\t\\$this->validate(\\$request, [",
+                    "\t\t'token' => 'required'", 
+                "\t]);\n",
+        
+                "\ttry {",
+                    "\t\tJWTAuth::invalidate(\\$request->token);\n",
+        
+                    "\t\treturn response()->json([",
+                        "\t\t\t'success' => true,",
+                        "\t\t\t'message' => 'User logged out successfully'",
+                    "\t\t]);",
+                "\t} catch (JWTException \\$exception) {",
+                    "\t\treturn response()->json([",
+                        "\t\t\t'success' => false,",
+                        "\t\t\t'message' => 'Sorry, the user cannot be logged out'",
+                    "\t\t], 500);",
+                "\t}",
+            "}",
+		],
+		"description": "Method to Logout a User"
+    },
+
+	"JWT Me Method": {
+        "prefix": "jwt_me_method",
+        "scope": "php",
+		"body": [
+            "/*",
+            " * @return \\Illuminate\\Http\\JsonResponse",
+            " */",
+            "public function me()",
+            "{",
+                "\treturn response()->json(auth()->user());",
+            "}"
+		],
+		"description": "Method to Return a User from Token"
+    },
+    
+
+
+}

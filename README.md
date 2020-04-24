@@ -1,11 +1,15 @@
-# Laravel API Documentation Generator Snippets
+# Laravel API Snippets
 
-![Laravel API Documentation Generator Snippets](./img/logo.png)
+![Laravel API Snippets](./img/logo.png)
+
+
+## Laravel API Documentation Generator
+
+
+
+## Laravel API Documentation Generator
 
 Snippets to improve productivity to documentation Laravel API using the library [https://laravel-apidoc-generator.readthedocs.io/](https://laravel-apidoc-generator.readthedocs.io/)
-
-
-## Snippets
 
 COMMAND                                 | ACTION
 ----------------------------------------|----------------------

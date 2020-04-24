@@ -1,17 +1,17 @@
 {
-	"name": "laravel-api-docs-generator-snippets",
-	"version": "0.1.1",
+	"name": "laravel-api-snippets",
+	"version": "0.2.0",
 	"publisher": "angelorafael",
 	"author": {
 		"name": "Angelo Rafael Pinto"
 	},
-	"displayName": "Laravel API Docs Snippets",
-	"description": "Snippets to library Laravel API Documentation Generator",
+	"displayName": "Laravel API Snippets",
+	"description": "Snippets to Laravel API",
 	"engines": {
 		"vscode": "^1.44.0"
 	},
 	"categories": [
-		"Snippets", "Keymaps", "Other" 
+		"Snippets", "Keymaps", "Other"
 	],
 	"icon": "img/logo.png",
 	"repository": {
@@ -38,8 +38,11 @@
         "snippets": [
             {
                 "path": "./snippets/php.code-snippets"
+            },
+            {
+                "path": "./snippets/jwt.code-snippets"
             }
-        ]		
+        ]
 	},
 	"scripts": {
 		"lint": "eslint .",
