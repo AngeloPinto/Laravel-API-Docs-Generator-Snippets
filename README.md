@@ -11,7 +11,7 @@ COMMAND                                 | ACTION
 ----------------------------------------|----------------------
 <kbd>apidoc_group</kbd>                 |  `@group group_name`
 <kbd>apidoc_url_param</kbd>             |  `@urlParam parameter required/opcional description.`
-<kbd>apidoc_query_param</kbd>           |  `@urlParam parameter required/opcional description. Example: example`
+<kbd>apidoc_query_param</kbd>           |  `@queryParam parameter required/opcional description. Example: example`
 <kbd>apidoc_body_param</kbd>            |  `@bodyParam parameter type required/opcional description. Example: example`
 <kbd>apidoc_response</kbd>              |  `@response http_status_code`
 <kbd>apidoc_response_file</kbd>         |  `@response http_status_code file_path`
