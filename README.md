@@ -16,6 +16,8 @@
 
 ### Installing JWT
 
+#### Read library documentation [https://jwt-auth.readthedocs.io/](https://jwt-auth.readthedocs.io/)
+
 1. Install the library - $[prompt]
 
     ```composer require tymon/jwt-auth```
@@ -107,6 +109,7 @@
         jwt_register_method
         jwt_login_method
         jwt_logout_method
+        jwt_me_method
     }
     ```
 

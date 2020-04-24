@@ -100,6 +100,7 @@
                     "\t\t\tjwt_register_method",
                     "\t\t\tjwt_login_method",
                     "\t\t\tjwt_logout_method",
+                    "\t\t\tjwt_me_method",
                 "\t\t}\n",
 
 			"*/"
