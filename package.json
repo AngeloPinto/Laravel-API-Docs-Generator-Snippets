@@ -16,7 +16,7 @@
 	"icon": "img/logo.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AngeloPinto/VSCode-Laravel-API-Docs-Generator-Snippets"
+		"url": "https://github.com/AngeloPinto/vscode-Laravel-API"
 	},
 	"activationEvents": [
         "onCommand:laravel-api-docs-generator-snippets.adjust_block"
