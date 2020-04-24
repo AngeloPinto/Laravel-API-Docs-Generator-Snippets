@@ -115,12 +115,14 @@
 		"body": [
 			"/*",
 			"    $[prompt]: \n",
-			"    // 1st - Install the library",
+			"    * 1st - Install the library",
 			"    composer require --dev mpociot/laravel-apidoc-generator\n",
-			"    // 2nd - Publish the config file",
+			"    * 2nd - Publish the config file",
 			"    php artisan vendor:publish --provider=\"Mpociot\\ApiDoc\\ApiDocGeneratorServiceProvider\" --tag=apidoc-config\n",
-			"    // 3rd - Generate the documentation",
+			"    * 3rd - Generate the documentation",
 			"    php artisan apidoc:generate\n",
+			"    * 4th - Open Documentation",
+			"    \\public\\docs\\index.html\n",
 			"*/"
 		],
 		"description": "Comentário para Sub-Títulos no PHP"
