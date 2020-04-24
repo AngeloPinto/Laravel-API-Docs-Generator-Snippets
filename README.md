@@ -32,7 +32,7 @@
     ],
     ```
 
-3. Publish the provider. Will be create a file [/config/jwt.php] - $[prompt]
+3. Publish the provider. A file will be created [/config/jwt.php] - $[prompt]
 
     `php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"`
 
