@@ -36,7 +36,7 @@
 
     `php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"`
 
-4. In the [.env] will be generate a secret key of JWT - $[prompt]
+4. In the [.env] will be generate a secret key of JWT - $[prompt:]
 
     ```php artisan jwt:secret```
 
@@ -52,7 +52,10 @@
 
 6. Add the Routes [routes/api.php]
 
-    <kbd>jwt_routes</kbd>
+    ```php
+    ...
+    jwt_routes
+    ```
 
 7. Updating User Model [App/User.php] implements JWTSubject
 
