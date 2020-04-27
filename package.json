@@ -1,6 +1,6 @@
 {
 	"name": "laravel-api-snippets",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"publisher": "angelorafael",
 	"author": {
 		"name": "Angelo Rafael Pinto"
@@ -16,7 +16,7 @@
 	"icon": "img/logo.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/AngeloPinto/vscode-Laravel-API"
+		"url": "https://github.com/angelorpt/vscode-Laravel-API"
 	},
 	"activationEvents": [
         "onCommand:laravel-api-docs-generator-snippets.adjust_block"
