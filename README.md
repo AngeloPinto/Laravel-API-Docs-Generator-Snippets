@@ -5,6 +5,10 @@
 * [Laravel API JWT](#laravel-api-jwt)
     
     * [Installing JWT](#installing-jwt)
+    
+    * [Configuring Database](#configuring-database)
+    
+    * [Testing JWT](#testing-jwt)
 
     * [JWT Snippets](#jwt-snippets)
 
@@ -112,6 +116,139 @@
         jwt_me_method
     }
     ```
+
+### Configuring Database
+
+#### Configure SQLite database [optional] or configure any other
+
+1. In the file [.env] remove below rows
+
+    ```
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=    
+    ```
+
+2. Change the database
+
+    ```
+    DB_CONNECTION=sqlite
+    ```
+
+3. Create a empty file - $[prompt]
+
+    `touch database/database.sqlite`
+
+4. Migrate de tables
+
+    `php artisan migrate`
+
+### Testing JWT    
+
+
+1. Run the Server - $[prompt]
+
+    `php artisan serve`
+
+2. With your Client Rest.
+
+    `HTTP POST`
+
+    `Request Body`
+
+    ```json
+    {
+        "name": "sr smith",
+        "email": "smith@email.com",
+        "password": "secret"
+    }
+    ```
+
+    `Response`
+
+    ```json
+    {
+        "success": true,
+        "data": {
+            "name": "sr smith",
+            "email": "smith@email.com",
+            "updated_at": "2020-04-25T14:42:02.000000Z",
+            "created_at": "2020-04-25T14:42:02.000000Z",
+            "id": 1
+        }
+    }
+    ```
+
+3. Login the user
+
+    `HTTP POST`
+
+    `Resquest Body` 
+
+    ```json
+    {
+        "email": "smith@email.com",
+        "password": "secret"
+    }
+    ```
+
+    `Response`
+
+    ```json
+    {
+        "success": true,
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni..."
+    }    
+    ```
+
+4. Get user by token
+
+    `HTTP GET`
+
+    `Request Header`
+
+    ```json        
+    {
+        "Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni..."
+    }
+    ```
+
+    `Response`
+
+    ```json
+    {
+        "id": 1,
+        "name": "sr smith",
+        "email": "smith@email.com",
+        "email_verified_at": null,
+        "created_at": "2020-04-25T14:42:02.000000Z",
+        "updated_at": "2020-04-25T14:42:02.000000Z"
+    }
+    ```
+
+5. User logout
+
+    `HTTP POST`
+
+    `Request Header`
+
+    ```json        
+    {
+        "Authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1Ni..."
+    }
+    ```
+
+    `Response`
+
+    ```json
+    {
+        "success": true,
+        "message": "User logged out successfully"
+    }
+
+
 
 ### JWT Snippets
 
