@@ -356,13 +356,13 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 COMMAND                                 | ACTION
 ----------------------------------------|----------------------
-<kbd>apidoc_group</kbd>                 |  `@group group_name`
-<kbd>apidoc_url_param</kbd>             |  `@urlParam parameter required/opcional description.`
-<kbd>apidoc_query_param</kbd>           |  `@queryParam parameter required/opcional description. Example: example`
-<kbd>apidoc_body_param</kbd>            |  `@bodyParam parameter type required/opcional description. Example: example`
-<kbd>apidoc_response</kbd>              |  `@response http_status_code`
-<kbd>apidoc_response_file</kbd>         |  `@response http_status_code file_path`
-<kbd>apidoc_setup</kbd>                 |  `Type a comment with the steps to setup`
+<kbd>doc_group</kbd>                 |  `@group group_name`
+<kbd>doc_url_param</kbd>             |  `@urlParam parameter required/opcional description.`
+<kbd>doc_query_param</kbd>           |  `@queryParam parameter required/opcional description. Example: example`
+<kbd>doc_body_param</kbd>            |  `@bodyParam parameter type required/opcional description. Example: example`
+<kbd>doc_response</kbd>              |  `@response http_status_code`
+<kbd>doc_response_file</kbd>         |  `@response http_status_code file_path`
+<kbd>doc_setup</kbd>                 |  `Type a comment with the steps to setup`
 <kbd>ctrl + n</kbd> <kbd>ctrl + b</kbd> |  `Include "*" before each selected line`
 
 

@@ -1,7 +1,7 @@
 {
 	
 	"Laravel APIDoc Setup": {
-		"prefix": "apidoc_setup",
+		"prefix": "doc_setup",
 		"body": [
 			"/*",
 			
@@ -25,7 +25,7 @@
     },
 
 	"Laravel APIDoc group": {
-		"prefix": "apidoc_group",
+		"prefix": "doc_group",
 		"scope": "php",
 		"body": [
 			"@group ${1:group_name}",
@@ -34,7 +34,7 @@
 	},
 	
 	"Laravel APIDoc urlParam": {
-		"prefix": "apidoc_url_param",
+		"prefix": "doc_url_param",
 		"scope": "php",
 		"body": [
 			"@urlParam ${1:parameter} ${2:required/opcional} ${3:description}.",
@@ -43,7 +43,7 @@
 	},
 
 	"Laravel APIDoc queryParam": {
-		"prefix": "apidoc_query_param",
+		"prefix": "doc_query_param",
 		"scope": "php",
 		"body": [
 			"@queryParam ${1:parameter} ${2:required/opcional} ${3:description}. Example: ${4:example}",
@@ -52,7 +52,7 @@
 	},
 
 	"Laravel APIDoc bodyParam": {
-		"prefix": "apidoc_body_param",
+		"prefix": "doc_body_param",
 		"scope": "php",
 		"body": [
 			"@bodyParam ${1:parameter} ${2:type} ${3:required/opcional} ${4:description}. Example: ${5:example}",
@@ -61,7 +61,7 @@
 	},
 
 	"Laravel APIDoc response": {
-		"prefix": "apidoc_response",
+		"prefix": "doc_response",
 		"scope": "php",
 		"body": [
 			"@response ${1:http_status_code}",
@@ -70,7 +70,7 @@
 	},
 
 	"Laravel APIDoc responseFile": {
-		"prefix": "apidoc_response_file",
+		"prefix": "doc_response_file",
 		"scope": "php",
 		"body": [
 			"@response ${1:http_status_code} ${2:file_path}",
