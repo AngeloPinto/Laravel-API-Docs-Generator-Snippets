@@ -172,7 +172,7 @@ COMMAND                             | ACTION
 
     `touch database/database.sqlite`
 
-4. Migrate de tables
+4. Migrate the tables
 
     `php artisan migrate`
 
