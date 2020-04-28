@@ -338,16 +338,26 @@ Snippets to improve productivity to documentation Laravel API using the library 
     
 `php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
 
-3. Generate the documentation - $[prompt]
+3. In the file [/config/apidoc.php], change line below 
+
+```php
+...
+
+'base_url' => 'http://127.0.0.1:8000',
+
+```
+
+4. Generate the documentation - $[prompt]
 
 `php artisan apidoc:generate`
 
-4. Open Documentation - $[prompt]
+5. Open Documentation - $[prompt]
 
 `\public\docs\index.html`
 
+6. Import the file below to your [Postman](https://www.postman.com/) as new collection
 
-
+`\public\docs\collection.json`
 
 
 ### API Docs Snippets 
