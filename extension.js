@@ -32,9 +32,11 @@ function activate(context) {
 
 			var a = text.split('\n');
 			var newText = '';
+
 			a.forEach(element => {
 				newText += (`\t * ${element}\n`);
 			});
+			newText += '\t *';
 
 			edit.replace(editor.selection, newText);
 			vscode.window.showInformationMessage('Laravel API Docs - Block ajusted');
