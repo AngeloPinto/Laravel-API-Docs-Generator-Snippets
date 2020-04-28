@@ -1,0 +1,81 @@
+{
+	
+	"Laravel APIDoc Setup": {
+		"prefix": "apidoc_setup",
+		"body": [
+			"/*",
+			
+			"\t$[prompt]: \n",
+
+			"\t1) Install the library\n",
+			"\t\tcomposer require --dev mpociot/laravel-apidoc-generator\n",
+
+			"\t2) Publish the config file\n",
+			"\t\tphp artisan vendor:publish --provider=\"Mpociot\\ApiDoc\\ApiDocGeneratorServiceProvider\" --tag=apidoc-config\n",
+			
+			"\t3) Generate the documentation\n",
+			"\t\tphp artisan apidoc:generate\n",
+			
+			"\t4) Open Documentation\n",
+			"\t\t\\public\\docs\\index.html\n",
+
+			"*/"
+		],
+		"description": "Comentário para Sub-Títulos no PHP"
+    },
+
+	"Laravel APIDoc group": {
+		"prefix": "apidoc_group",
+		"scope": "php",
+		"body": [
+			"@group ${1:group_name}",
+		],
+		"description": "Annotation to group"
+	},
+	
+	"Laravel APIDoc urlParam": {
+		"prefix": "apidoc_url_param",
+		"scope": "php",
+		"body": [
+			"@urlParam ${1:parameter} ${2:required/opcional} ${3:description}.",
+		],
+		"description": "Annotation to URL Params"
+	},
+
+	"Laravel APIDoc queryParam": {
+		"prefix": "apidoc_query_param",
+		"scope": "php",
+		"body": [
+			"@queryParam ${1:parameter} ${2:required/opcional} ${3:description}. Example: ${4:example}",
+		],
+		"description": "Annotation to Query Params"
+	},
+
+	"Laravel APIDoc bodyParam": {
+		"prefix": "apidoc_body_param",
+		"scope": "php",
+		"body": [
+			"@bodyParam ${1:parameter} ${2:type} ${3:required/opcional} ${4:description}. Example: ${5:example}",
+		],
+		"description": "Annotation to Body Params"
+	},
+
+	"Laravel APIDoc response": {
+		"prefix": "apidoc_response",
+		"scope": "php",
+		"body": [
+			"@response ${1:http_status_code}",
+		],
+		"description": "Annotation to Response"
+	},
+
+	"Laravel APIDoc responseFile": {
+		"prefix": "apidoc_response_file",
+		"scope": "php",
+		"body": [
+			"@response ${1:http_status_code} ${2:file_path}",
+		],
+		"description": "Annotation to File Response"
+    }
+
+}

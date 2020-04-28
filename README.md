@@ -2,6 +2,10 @@
 
 ![Laravel API Snippets](./img/logo.png)
 
+
+
+* [Api Snippets](#api-snippets)
+
 * [Laravel API JWT](#laravel-api-jwt)
     
     * [Installing JWT](#installing-jwt)
@@ -14,11 +18,31 @@
 
 * [Laravel API Documentation Generator](#laravel-api-documentation-generator)
 
+    * [Installing Documentation Library](#installing-documentation-library)
+
     * [API Docs Snippets](#api-docs-snippets)
+
+
+
+
+
+## Api Snippets
+
+[↑ Menu](#Laravel-API-Snippets)
+
+COMMAND                             | ACTION
+------------------------------------|-------------------------------------------
+<kbd>api_response</kbd>             |  `Insert json response`
+
+
+
+
 
 ## Laravel API JWT
 
 ### Installing JWT
+
+[↑ Menu](#Laravel-API-Snippets)
 
 #### Read library documentation [https://jwt-auth.readthedocs.io/](https://jwt-auth.readthedocs.io/)
 
@@ -117,7 +141,13 @@
     }
     ```
 
+
+
+
+
 ### Configuring Database
+
+[↑ Menu](#Laravel-API-Snippets)
 
 #### Configure SQLite database [optional] or configure any other
 
@@ -145,7 +175,13 @@
 
     `php artisan migrate`
 
+
+
+
+
 ### Testing JWT    
+
+[↑ Menu](#Laravel-API-Snippets)
 
 
 1. Run the Server - $[prompt]
@@ -250,7 +286,11 @@
 
 
 
+
+
 ### JWT Snippets
+
+[↑ Menu](#Laravel-API-Snippets)
 
 COMMAND                             | ACTION
 ------------------------------------|----------------------
@@ -275,14 +315,43 @@ COMMAND                             | ACTION
 
 
 
-
 ## Laravel API Documentation Generator
 
+[↑ Menu](#Laravel-API-Snippets)
 
 Snippets to improve productivity to documentation Laravel API using the library [https://laravel-apidoc-generator.readthedocs.io/](https://laravel-apidoc-generator.readthedocs.io/)
 
 
-### API Docs Snippets
+
+
+
+### Installing Documentation Library
+
+[↑ Menu](#Laravel-API-Snippets)
+
+1. Install the library - $[prompt]
+
+`composer require --dev mpociot/laravel-apidoc-generator`
+
+2. Publish the provider. A file will be created [/config/apidoc.php] - $[prompt]
+    
+`php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
+
+3. Generate the documentation - $[prompt]
+
+`php artisan apidoc:generate`
+
+4. Open Documentation - $[prompt]
+
+`\public\docs\index.html`
+
+
+
+
+
+### API Docs Snippets 
+
+[↑ Menu](#Laravel-API-Snippets)
 
 
 COMMAND                                 | ACTION

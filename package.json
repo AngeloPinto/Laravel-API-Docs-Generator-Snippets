@@ -1,6 +1,6 @@
 {
 	"name": "laravel-api-snippets",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"publisher": "angelorafael",
 	"author": {
 		"name": "Angelo Rafael Pinto"
@@ -8,7 +8,7 @@
 	"displayName": "Laravel API Snippets",
 	"description": "Snippets to Laravel API",
 	"engines": {
-		"vscode": "^1.44.0"
+		"vscode": "^1.40.0"
 	},
 	"categories": [
 		"Snippets", "Keymaps", "Other"
@@ -19,20 +19,20 @@
 		"url": "https://github.com/angelorpt/vscode-Laravel-API"
 	},
 	"activationEvents": [
-        "onCommand:laravel-api-docs-generator-snippets.adjust_block"
+        "onCommand:laravel-api-snippets.adjust_block"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [{
 			"title": "API Docs - Adjust Notations Block",
-            "command": "laravel-api-docs-generator-snippets.adjust_block"
+            "command": "laravel-api-snippets.adjust_block"
 
 		}],		
         "keybindings": [
             {
 				"key": "ctrl+n ctrl+b",
 				"title": "API Docs - Adjust Notations Block",
-                "command": "laravel-api-docs-generator-snippets.adjust_block"
+                "command": "laravel-api-snippets.adjust_block"
             }
 		],
         "snippets": [
@@ -41,6 +41,12 @@
             },
             {
                 "path": "./snippets/jwt.code-snippets"
+            },
+            {
+                "path": "./snippets/api.code-snippets"
+            },
+            {
+                "path": "./snippets/doc.code-snippets"
             }
         ]
 	},
@@ -50,7 +56,7 @@
 		"test": "node ./test/runTest.js"
 	},
 	"devDependencies": {
-        "@types/vscode": "^1.44.0",
+        "@types/vscode": "^1.40.0",
         "@types/glob": "^7.1.1",
         "@types/mocha": "^7.0.2",
         "@types/node": "^13.11.0",

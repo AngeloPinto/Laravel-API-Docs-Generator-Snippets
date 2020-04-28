@@ -1,0 +1,15 @@
+{
+	"API Response": {
+        "prefix": "api_response",
+        "scope": "php",
+		"body": [
+            "\\$result = [",
+                "\t'success' => ${2:true},",
+                "\t'message' => '${3:message}'$0${6:,}",
+                "${4:\t'data'    => \\$${5:data}}",
+            "];",
+            "return response()->json(\\$result, ${1:200});"
+		],
+		"description": "Response JSON"
+    }
+}
