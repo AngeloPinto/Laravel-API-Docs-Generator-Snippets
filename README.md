@@ -284,7 +284,7 @@ COMMAND                             | ACTION
         "success": true,
         "message": "User logged out successfully"
     }
-
+    ```   
 
 
 
