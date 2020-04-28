@@ -128,8 +128,8 @@
             
             "Route::group(['middleware' => 'auth.jwt'], function () {\n",
 
-                "\tRoute::get('logout', 'ApiController@logout');",
-                "\tRoute::get('me'    , 'ApiController@me');\n",
+                "\tRoute::post('logout', 'ApiController@logout');",
+                "\tRoute::get ('me'    , 'ApiController@me');\n",
 
                 "\t//... Your routes ...\n",
 

@@ -2,6 +2,7 @@
 
 ![Laravel API Snippets](./img/logo.png)
 
+## Become more efficient to create APIs with Laravel!
 
 ## Menu
 
@@ -351,7 +352,7 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 `php artisan apidoc:generate`
 
-5. Open Documentation - $[prompt]
+5. Open Documentation
 
 `\public\docs\index.html`
 
