@@ -12,12 +12,12 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension Laravel API Docs Generator Snippets is now active!');
+	console.log('Congratulations, your extension Laravel API Snippets is now active!');
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('laravel-api-docs-generator-snippets.adjust_block', function () {
+	let disposable = vscode.commands.registerCommand('laravel-api-snippets.adjust_block', function () {
 		// The code you place here will be executed every time your command is executed
 
 		const editor = vscode.window.activeTextEditor;
@@ -33,11 +33,11 @@ function activate(context) {
 			var a = text.split('\n');
 			var newText = '';
 			a.forEach(element => {
-				newText += (`     * ${element}\n`);
+				newText += (`\t * ${element}\n`);
 			});
 
 			edit.replace(editor.selection, newText);
-			vscode.window.showInformationMessage('Laravel API Docs - Block notations ajusted');
+			vscode.window.showInformationMessage('Laravel API Docs - Block ajusted');
 
 		});
 
@@ -49,7 +49,7 @@ exports.activate = activate;
 
 // this method is called when your extension is deactivated
 function deactivate() {
-	vscode.window.showInformationMessage('Laravel API Docs - See ya');
+	vscode.window.showInformationMessage('Laravel API - See ya');
 }
 
 module.exports = {
