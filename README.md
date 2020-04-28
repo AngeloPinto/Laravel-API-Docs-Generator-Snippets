@@ -3,6 +3,7 @@
 ![Laravel API Snippets](./img/logo.png)
 
 
+## Menu
 
 * [Api Snippets](#api-snippets)
 
@@ -28,7 +29,7 @@
 
 ## Api Snippets
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 COMMAND                             | ACTION
 ------------------------------------|-------------------------------------------
@@ -42,7 +43,7 @@ COMMAND                             | ACTION
 
 ### Installing JWT
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 #### Read library documentation [https://jwt-auth.readthedocs.io/](https://jwt-auth.readthedocs.io/)
 
@@ -147,7 +148,7 @@ COMMAND                             | ACTION
 
 ### Configuring Database
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 #### Configure SQLite database [optional] or configure any other
 
@@ -181,7 +182,7 @@ COMMAND                             | ACTION
 
 ### Testing JWT    
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 
 1. Run the Server - $[prompt]
@@ -290,7 +291,7 @@ COMMAND                             | ACTION
 
 ### JWT Snippets
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 COMMAND                             | ACTION
 ------------------------------------|----------------------
@@ -317,7 +318,7 @@ COMMAND                             | ACTION
 
 ## Laravel API Documentation Generator
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 Snippets to improve productivity to documentation Laravel API using the library [https://laravel-apidoc-generator.readthedocs.io/](https://laravel-apidoc-generator.readthedocs.io/)
 
@@ -327,7 +328,7 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 ### Installing Documentation Library
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 1. Install the library - $[prompt]
 
@@ -351,18 +352,18 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 ### API Docs Snippets 
 
-[↑ Menu](#Laravel-API-Snippets)
+[↑ Menu](#menu)
 
 
 COMMAND                                 | ACTION
 ----------------------------------------|----------------------
-<kbd>doc_group</kbd>                 |  `@group group_name`
-<kbd>doc_url_param</kbd>             |  `@urlParam parameter required/opcional description.`
-<kbd>doc_query_param</kbd>           |  `@queryParam parameter required/opcional description. Example: example`
-<kbd>doc_body_param</kbd>            |  `@bodyParam parameter type required/opcional description. Example: example`
-<kbd>doc_response</kbd>              |  `@response http_status_code`
-<kbd>doc_response_file</kbd>         |  `@response http_status_code file_path`
-<kbd>doc_setup</kbd>                 |  `Type a comment with the steps to setup`
+<kbd>doc_group</kbd>                    |  `@group group_name`
+<kbd>doc_url_param</kbd>                |  `@urlParam parameter required/opcional description.`
+<kbd>doc_query_param</kbd>              |  `@queryParam parameter required/opcional description. Example: example`
+<kbd>doc_body_param</kbd>               |  `@bodyParam parameter type required/opcional description. Example: example`
+<kbd>doc_response</kbd>                 |  `@response http_status_code`
+<kbd>doc_response_file</kbd>            |  `@response http_status_code file_path`
+<kbd>doc_setup</kbd>                    |  `Type a comment with the steps to setup`
 <kbd>ctrl + n</kbd> <kbd>ctrl + b</kbd> |  `Include "*" before each selected line`
 
 
