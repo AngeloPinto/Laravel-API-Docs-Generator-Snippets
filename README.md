@@ -89,6 +89,16 @@ COMMAND                             | ACTION
     'defaults' => [
         'guard' => 'api',
         ...
+    ],
+    
+    ...
+
+    'guards' => [
+        ...
+        'api' => [
+            'driver' => 'jwt',
+            ...
+        ],
     ],    
     ```
 
