@@ -24,7 +24,7 @@
 
     * [API Docs Snippets](#api-docs-snippets)
 
-
+* [Make a donation](#make-a-donation)
 
 
 
@@ -399,6 +399,6 @@ PayPal                 | PicPay
 
 Não tem PicPay ainda - Cadastrando-se com o código de indicação ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) você ganha R$ 10,00 de volta (cashback) após sua primeira compra. [Download](http://www.picpay.com/convite?6YHQJQ)
 
-There is no PicPay yet - Registering with the referral code ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) you get R$ 10.00 back (cashback) after your first purchase. [Download](http://www.picpay.com/convite?6YHQJQ)
+Don't have PicPay yet - Registering with the referral code ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) you get R$ 10.00 back (cashback) after your first purchase. [Download](http://www.picpay.com/convite?6YHQJQ)
 
 ### Enjoy it!
