@@ -82,14 +82,24 @@ COMMAND                             | ACTION
     ];
     ```
 
-6. Add the Routes [routes/api.php]
+6. Change default guard [/config/auth.php]
+
+    ```php
+    ...
+    'defaults' => [
+        'guard' => 'api',
+        ...
+    ],    
+    ```
+
+7. Add the Routes [/routes/api.php]
 
     ```php
     ...
     jwt_routes
     ```
 
-7. Updating User Model [App/User.php] implements JWTSubject
+8. Updating User Model [/App/User.php] implements JWTSubject
 
     ```php
     ...
@@ -103,11 +113,11 @@ COMMAND                             | ACTION
     }
     ```
 
-8. Creating Registration Form Request - $[prompt]
+9. Creating Registration Form Request - $[prompt]
 
     ```php artisan make:request RegistrationFormRequest```
 
-9. Creating Validations Rules [/App/Http/Requests/RegistrationFormRequest.php]
+10. Creating Validations Rules [/App/Http/Requests/RegistrationFormRequest.php]
 
     ```php
     ...
@@ -124,11 +134,11 @@ COMMAND                             | ACTION
     }
     ```
 
-10. Creating API Controller for Login and Registration - $[prompt]
+11. Creating API Controller for Login and Registration - $[prompt]
 
     ```php artisan make:controller APIController```
 
-11. Creating methods in API Controller [app/Http/Controllers/APIController.php]
+12. Creating methods in API Controller [/App/Http/Controllers/APIController.php]
 
     ```php
     use Illuminate\Http\Request;
@@ -377,5 +387,18 @@ COMMAND                                 | ACTION
 <kbd>doc_setup</kbd>                    |  `Type a comment with the steps to setup`
 <kbd>ctrl + n</kbd> <kbd>ctrl + b</kbd> |  `Include "*" before each selected line`
 
+
+### Make a donation
+
+PayPal                 | PicPay
+---------------------- | -------------------
+[ ![Doação Paypal](./img/Paypal.png) ](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UTR3YYMAXQGFC&source=url) | [ ![QRCode_PicPay](./img/Picpay.png) ](https://picpay.me/angelo.pinto)
+
+
+#### Picpay
+
+Não tem PicPay ainda - Cadastrando-se com o código de indicação ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) você ganha R$ 10,00 de volta (cashback) após sua primeira compra. [Download](http://www.picpay.com/convite?6YHQJQ)
+
+There is no PicPay yet - Registering with the referral code ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) you get R$ 10.00 back (cashback) after your first purchase. [Download](http://www.picpay.com/convite?6YHQJQ)
 
 ### Enjoy it!
