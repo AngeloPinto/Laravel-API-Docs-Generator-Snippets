@@ -1,6 +1,6 @@
 {
 	"name": "laravel-api-snippets",
-	"version": "0.2.10",
+	"version": "0.3.0",
 	"publisher": "angelorafael",
 	"author": {
 		"name": "Angelo Rafael Pinto"
@@ -47,6 +47,9 @@
             },
             {
                 "path": "./snippets/doc.code-snippets"
+            },
+            {
+                "path": "./snippets/permission.code-snippets"
             }
         ]
 	},

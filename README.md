@@ -24,6 +24,10 @@
 
     * [API Docs Snippets](#api-docs-snippets)
 
+* [Permission](#permission)
+
+    * [Intalling Permission](#intalling-permission)
+
 * [Make a donation](#make-a-donation)
 
 
@@ -353,32 +357,35 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 1. Install the library - $[prompt]
 
-`composer require --dev mpociot/laravel-apidoc-generator`
+    `composer require --dev mpociot/laravel-apidoc-generator`
 
 2. Publish the provider. A file will be created [/config/apidoc.php] - $[prompt]
     
-`php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
+    `php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
 
 3. In the file [/config/apidoc.php], change line below 
 
-```php
-...
+    ```php
+    ...
 
-'base_url' => 'http://127.0.0.1:8000',
+    'base_url' => 'http://127.0.0.1:8000',
 
-```
+    ```
 
 4. Generate the documentation - $[prompt]
 
-`php artisan apidoc:generate`
+    `php artisan apidoc:generate`
 
 5. Open Documentation
 
-`\public\docs\index.html`
+    `\public\docs\index.html`
 
 6. Import the file below to your [Postman](https://www.postman.com/) as new collection
 
-`\public\docs\collection.json`
+    `\public\docs\collection.json`
+
+
+
 
 
 ### API Docs Snippets 
@@ -398,6 +405,74 @@ COMMAND                                 | ACTION
 <kbd>ctrl + n</kbd> <kbd>ctrl + b</kbd> |  `Include "*" before each selected line`
 
 
+
+
+
+
+## Permission
+
+### Intalling Permission
+
+[↑ Menu](#menu)
+
+
+### Read library documentation [Laravel Permission](https://docs.spatie.be/laravel-permission/v3/introduction/)
+
+
+1. Install the Permission Library
+
+    `composer require spatie/laravel-permission`
+
+
+2. Change the file [config/app.php]
+
+    ```php
+    'providers' => [
+        ...
+        pms_provider
+    ];
+    ```
+
+
+3. Publish the provider $[prompt]
+
+    `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"`
+
+
+4. Change de User Class
+
+    ```php
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    ...
+    pms_use_roles
+
+    class User extends Authenticatable
+    {
+        use HasRoles;
+        ...
+    }
+    ```
+
+5. Defining Middleware Route
+
+    ```php
+    protected $routeMiddleware = [
+        ...
+        pms_middleware
+    ];    
+    ```
+
+5. Run the migration
+
+    `php artisan migrate`
+
+
+### Using Permission
+
+
+
+
+
 ### Make a donation
 
 PayPal                 | PicPay
@@ -412,3 +487,4 @@ Não tem PicPay ainda - Cadastrando-se com o código de indicação ([6YHQJQ](ht
 Don't have PicPay yet - Registering with the referral code ([6YHQJQ](http://www.picpay.com/convite?6YHQJQ)) you get R$ 10.00 back (cashback) after your first purchase. [Download](http://www.picpay.com/convite?6YHQJQ)
 
 ### Enjoy it!
+

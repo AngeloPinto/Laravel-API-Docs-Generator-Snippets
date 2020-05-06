@@ -1,0 +1,42 @@
+{
+
+	"Permission Provider": {
+        "prefix": "pms_provider",
+		"scope": "php",
+		"body": [
+			"Spatie\\Permission\\PermissionServiceProvider::class, // Permission Provider",
+		],
+		"description": "Insert Permission Provider"
+    },
+    
+	"Permission Use Roles": {
+        "prefix": "pms_use_roles",
+		"scope": "php",
+		"body": [
+			"use Spatie\\Permission\\Traits\\HasRoles;",
+		],
+		"description": "Use HasRoles permissions"
+    },
+    
+	"Permission Middleware": {
+        "prefix": "pms_middleware",
+		"scope": "php",
+		"body": [
+			"'role' => \\Spatie\\Permission\\Middlewares\\RoleMiddleware::class, // Role",
+			"'permission' => \\Spatie\\Permission\\Middlewares\\PermissionMiddleware::class, // Permission",
+			"'role_or_permission' => \\Spatie\\Permission\\Middlewares\\RoleOrPermissionMiddleware::class, // Role or Permission"
+		],
+		"description": "Insert Middleware"
+    },
+    
+	"Permission Aliass": {
+        "prefix": "pms_alias",
+		"scope": "php",
+		"body": [
+			"'Role' => Spatie\\Permission\\Models\\Role::class,              // Alias Role",
+			"'Permission' => Spatie\\Permission\\Models\\Permission::class,  // Alias Permission"
+		],
+		"description": "Insert Alias to Permissions and Roles"
+    },
+
+}
