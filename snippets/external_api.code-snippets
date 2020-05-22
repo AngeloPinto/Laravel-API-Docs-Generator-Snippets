@@ -1,0 +1,109 @@
+{
+
+	"External API - Use API Controller": {
+        "prefix": "ext_use_guzzle",
+        "scope": "php",
+		"body": [
+            "use GuzzleHttp\\Client;"
+		],
+		"description": "Insert Use Class of Guzzle"
+    },
+
+	"External API - Routes": {
+        "prefix": "ext_routes",
+        "scope": "php",
+		"body": [
+            "Route::get ('externalapi/get' , 'ExternalAPIController@getExample');",
+            "Route::get ('externalapi/post', 'ExternalAPIController@postExample');",
+		],
+		"description": "Routes to External API Requests"
+    },
+
+	"External API - Docs Class Group": {
+        "prefix": "ext_doc_group",
+        "scope": "php",
+		"body": [
+            "/**",
+            " * @group ExternalAPI",
+            " */",
+		],
+		"description": "Documention Class Group"
+    },
+
+	"External API - Method of GET": {
+        "prefix": "ext_get",
+        "scope": "php",
+		"body": [
+                "/**",
+                " * GET",
+                " * Exemple of GET request to External API",
+                " * ",
+                " */",
+                "public function getExample() {\n",
+
+                    "\t\\$client   = new Client();",
+                    "\t\\$response = \\$client->request('GET', 'http://jsonplaceholder.typicode.com/todos');\n",
+
+                    "\tif (\\$response->getStatusCode() == 200) {",
+                        "\t\t\\$result = [",
+                            "\t\t\t'success' => true,",
+                            "\t\t\t'code'    => \\$response->getStatusCode(),",
+                            "\t\t\t'reason'  => \\$response->getReasonPhrase(),",
+                            "\t\t\t'header'  => \\$response->getHeader('content-type'),",
+                            "\t\t\t'body'    => json_decode(\\$response->getBody()),",
+                        "\t\t];",
+                        "\t\treturn response()->json(\\$result, 200);",
+                    "\t} else {",
+                        "\t\t\\$result = [",
+                            "\t\t\t'success' => false,",
+                            "\t\t\t'message' => 'Fail'",
+                        "\t\t];",
+                        "\t\treturn response()->json(\\$result, 500);",
+                    "\t}",
+                "}",
+		],
+		"description": "Insert the example function of GET"
+    },
+
+	"External API - Method of POST": {
+        "prefix": "ext_post",
+        "scope": "php",
+		"body": [
+                "/**",
+                " * POST",
+                " * Exemple of POST request to External API",
+                " * ",
+                " */",
+
+                "public function postExample() {\n",
+
+                    "\t\\$client   = new Client();",
+                    "\t\\$response = \\$client->request('POST', 'http://jsonplaceholder.typicode.com/todos', [",
+                        "\t\t'form_params' => [",
+                            "\t\t\t'title'     => 'new task',",
+                            "\t\t\t'completed' => true",
+                        "\t\t]",
+                    "\t]);\n",
+
+                    "\tif (\\$response->getStatusCode() == 201) {",
+                        "\t\t\\$result = [",
+                            "\t\t\t'success' => true,",
+                            "\t\t\t'code'    => \\$response->getStatusCode(),",
+                            "\t\t\t'reason'  => \\$response->getReasonPhrase(),",
+                            "\t\t\t'header'  => \\$response->getHeader('content-type'),",
+                            "\t\t\t'body'    => json_decode(\\$response->getBody()),",
+                        "\t\t];",
+                        "\t\treturn response()->json(\\$result, 200);",
+                    "\t} else {",
+                        "\t\t\\$result = [",
+                            "\t\t\t'success' => false,",
+                            "\t\t\t'message' => 'Fail'",
+                        "\t\t];",
+                        "\t\treturn response()->json(\\$result, 500);",
+                    "\t}",
+                "}"
+		],
+		"description": "Insert the example function of POST"
+    },
+
+}

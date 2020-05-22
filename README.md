@@ -24,6 +24,12 @@
 
     * [API Docs Snippets](#api-docs-snippets)
 
+* [External API](#external-api)
+
+    * [Installing Library](#installing-library)
+
+    * [Testing Resquest To Extenal API](#testing-resquest-to-extenal-api)
+
 * [Make a donation](#make-a-donation)
 
 
@@ -353,32 +359,32 @@ Snippets to improve productivity to documentation Laravel API using the library 
 
 1. Install the library - $[prompt]
 
-`composer require --dev mpociot/laravel-apidoc-generator`
+    `composer require --dev mpociot/laravel-apidoc-generator`
 
 2. Publish the provider. A file will be created [/config/apidoc.php] - $[prompt]
     
-`php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
+    `php artisan vendor:publish --provider="Mpociot\ApiDoc\ApiDocGeneratorServiceProvider" --tag=apidoc-config`
 
 3. In the file [/config/apidoc.php], change line below 
 
-```php
-...
+    ```php
+    ...
 
-'base_url' => 'http://127.0.0.1:8000',
+    'base_url' => 'http://127.0.0.1:8000',
 
-```
+    ```
 
 4. Generate the documentation - $[prompt]
 
-`php artisan apidoc:generate`
+    `php artisan apidoc:generate`
 
 5. Open Documentation
 
-`\public\docs\index.html`
+    `\public\docs\index.html`
 
 6. Import the file below to your [Postman](https://www.postman.com/) as new collection
 
-`\public\docs\collection.json`
+    `\public\docs\collection.json`
 
 
 ### API Docs Snippets 
@@ -396,6 +402,80 @@ COMMAND                                 | ACTION
 <kbd>doc_response_file</kbd>            |  `@response http_status_code file_path`
 <kbd>doc_setup</kbd>                    |  `Type a comment with the steps to setup`
 <kbd>ctrl + n</kbd> <kbd>ctrl + b</kbd> |  `Include "*" before each selected line`
+
+
+
+
+### External API
+
+[↑ Menu](#menu)
+
+    If you need to make a request for another API, you can use Guzzle.
+
+Read library documentation [https://guzzle.readthedocs.io/](https://guzzle.readthedocs.io/)
+
+
+#### Installing Library
+
+[↑ Menu](#menu)
+
+1. Run below command at $[prompt]
+
+    `composer require guzzlehttp/guzzle:~6.0`
+
+2. That's it, just that.
+
+
+#### Testing Resquest To Extenal API
+
+[↑ Menu](#menu)
+
+1. Create a new controller.
+
+    `php artisan make:controller ExternalApiController`
+
+2. Open the controller and change like below
+
+    ```php
+    use App\Http\Controllers\Controller;
+    use Illuminate\Http\Request;
+
+    ext_use_guzzle
+
+    ext_doc_group
+
+    class ExternalApiController extends Controller
+    {
+    ...
+    ```
+
+3. Insert the example methods of class to GET and POST.
+
+    ```php
+    class ExternalApiController extends Controller
+    {
+        ...
+        
+        ext_get
+
+        ext_post
+    }
+    ```
+
+4. Defining the routes. Open the file [routes\api.php]
+
+    ```php
+    ...
+
+    ext_routes
+
+    ```
+
+5. Now generate the documentation and run a request by Postman
+
+    `php artisan apidoc:generate`
+
+
 
 
 ### Make a donation
